@@ -43,6 +43,7 @@ class BrowserStackFactory extends Selenium2Factory
     public function buildDriver(array $config)
     {
         $config['wd_host'] = sprintf('%s:%s@hub.browserstack.com/wd/hub', $config['username'], $config['access_key']);
+        $config['capabilities']['browserstack.local'] = true;
 
         return parent::buildDriver($config);
     }
